@@ -1,0 +1,17 @@
+{
+  "name": "zype-live-events-api",
+  "version": "1.0.0",
+  "description": "Zype api that handles scheduled live events and creates them within Zype",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@googleapis/calendar": "^3.0.0",
+    "axios": "^1.2.0",
+    "google-auth-library": "^8.7.0"
+  },
+  "type": "module"
+}
