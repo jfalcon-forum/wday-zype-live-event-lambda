@@ -101,7 +101,6 @@ const updateGoogleEvent = async (zypeId, event) => {
     });
 
     if(response.date !== "") {
-      console.log(response.data)
       return response.data;
     } else {
       return "event not updated";
@@ -135,7 +134,6 @@ const createLiveEventZype = async (event, formattedDate) => {
     return response.data
   }).catch((error) => {
     if(error.response) {
-      console.log(error)
       return error
     } else {
       return { "message": "Error with request" }
@@ -163,7 +161,6 @@ const updateLiveEventVideo = async (event, id, formattedDate) => {
     return response.data
   }).catch((error) => {
     if(error.response) {
-      console.log(error)
       return error
     } else {
       return { "message": "Error with request" }
@@ -186,7 +183,6 @@ const addVideoToPlaylist = async (playlistId, videoId) => {
     return response.data
   }).catch((error) => {
     if(error.response) {
-      console.log(error)
       return error
     } else {
       return { "message": "Error with request" }
@@ -209,8 +205,6 @@ const createLiveEvent = async (event) => {
   }
 
   if (upcomingEvent.extendedProperties.shared.zypeId === "") {
-    console.log('create event')
-
     let date = upcomingEvent.start.dateTime;
     let dateArr = date.split("T")
     let formattedDate = dateArr[0]
@@ -229,7 +223,6 @@ const createLiveEvent = async (event) => {
   } else {
     // Skipping the current event creation because next event already exists
     return {"message": "Next schedule live event has already been created"}
-    console.log('skip') 
   } 
 }
 
